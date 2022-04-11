@@ -54,8 +54,8 @@ public class UserController {
 //	}
 
 	public User findByUserName(String username) throws UserNotFoundException {
-		TypedQuery<User> qry = eManager.createQuery("select u from User u where u.name like :name", User.class);
-		qry.setParameter("name", username);
+		TypedQuery<User> qry = eManager.createQuery("select u from User u where u.username like :username", User.class);
+		qry.setParameter("username", username);
 		List<User> user = qry.getResultList();
 		if (user.size() == 0)
 			throw new UserNotFoundException("User Not Available !!");
