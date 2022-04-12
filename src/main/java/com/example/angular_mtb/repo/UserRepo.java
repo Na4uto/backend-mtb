@@ -8,7 +8,7 @@ import com.example.angular_mtb.model.User;
 @Repository
 public interface UserRepo extends JpaRepository<User, String> {
 
-	User save(User user);
+	
 
 //User save(User user);
 
