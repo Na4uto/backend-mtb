@@ -1,5 +1,9 @@
 package com.example.angular_mtb.repo;
 
-public interface MoviesRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.example.angular_mtb.model.Movies;
+
+public interface MoviesRepository extends JpaRepository<Movies, Integer>{
 
 }

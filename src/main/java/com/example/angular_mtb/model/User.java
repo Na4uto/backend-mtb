@@ -18,7 +18,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "MTBUserRegister")
 public class User {
-	private String name;
+	private String username;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long userId;
@@ -29,8 +29,8 @@ public class User {
 	private boolean isAdmin;
 	
 	//private String city;
-	public String getName() {
-		return name;
+	public String getUsername() {
+		return username;
 	}
 	public boolean isAdmin() {
 		return isAdmin;
@@ -38,8 +38,8 @@ public class User {
 	public void setAdmin(boolean isAdmin) {
 		this.isAdmin = isAdmin;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setUsername(String name) {
+		this.username = name;
 	}
 
 	public String getEmail() {
