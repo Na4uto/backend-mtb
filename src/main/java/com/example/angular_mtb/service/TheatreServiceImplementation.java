@@ -7,15 +7,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.angular_mtb.exception.TheatreNotFoundException;
+import com.example.angular_mtb.model.Movies;
+import com.example.angular_mtb.model.Show;
 import com.example.angular_mtb.model.Theatre;
+import com.example.angular_mtb.repo.MoviesRepository;
 import com.example.angular_mtb.repo.TheatreRepository;
 
 @Service
 public class TheatreServiceImplementation implements TheatreService {
 	@Autowired
 	private TheatreRepository theatrerepository;
-	@Autowired
-	ScreenRepository screenRepository;
+//	@Autowired
+//	//ScreenRepository screenRepository;
 	@Autowired
 	private MoviesRepository moviesrepository;
 
@@ -64,7 +67,7 @@ public class TheatreServiceImplementation implements TheatreService {
 	@Override
 	public List<Theatre> findTheatresByMovie(Integer movieId) throws TheatreNotFoundException {
 		List<Theatre> theatreList=new ArrayList<>();
-		Movie movie=moviesrepository.findById(movieId).get();
+		Movies movie=moviesrepository.findById(movieId).get();
 		Integer showwID=movie.getShow().getShowId();
 		List<Theatre> theatres = theatrerepository.findAll();
 		for(Theatre theatre:theatres) {
