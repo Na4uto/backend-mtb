@@ -2,6 +2,7 @@ package com.example.angular_mtb.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,14 +12,15 @@ import com.example.angular_mtb.model.Movies;
 import com.example.angular_mtb.model.Show;
 import com.example.angular_mtb.model.Theatre;
 import com.example.angular_mtb.repo.MoviesRepository;
+import com.example.angular_mtb.repo.ScreenRepository;
 import com.example.angular_mtb.repo.TheatreRepository;
 
 @Service
 public class TheatreServiceImplementation implements TheatreService {
 	@Autowired
 	private TheatreRepository theatrerepository;
-//	@Autowired
-//	//ScreenRepository screenRepository;
+	@Autowired
+	ScreenRepository screenRepository;
 	@Autowired
 	private MoviesRepository moviesrepository;
 
@@ -68,16 +70,13 @@ public class TheatreServiceImplementation implements TheatreService {
 	public List<Theatre> findTheatresByMovie(Integer movieId) throws TheatreNotFoundException {
 		List<Theatre> theatreList=new ArrayList<>();
 		Movies movie=moviesrepository.findById(movieId).get();
-		Integer showwID=movie.getShow().getShowId();
-		List<Theatre> theatres = theatrerepository.findAll();
-		for(Theatre theatre:theatres) {
-			List<Show> shows =theatre.getShow();
-			for(Show show:shows){
-				if(show.getShowId()==showwID) {
-					theatreList.add(theatre);
-				}
-			}
+		Set<Show> shows=movie.getShows();
+	
+		for(Show s:shows) {
+			theatreList.add(s.getTheatre());
 		}
+		
+		
 		return theatreList;
 	}
 }

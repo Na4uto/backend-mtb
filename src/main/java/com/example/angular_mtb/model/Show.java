@@ -1,6 +1,7 @@
 package com.example.angular_mtb.model;
 
 import java.time.LocalDate;
+
 import java.time.LocalDateTime;
 import java.util.Date;
 
@@ -19,6 +20,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
@@ -44,7 +46,12 @@ public class Show {
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "movie_id", nullable = false)
 	private Movies movie;
-	
+	@JsonIgnore
+	@ManyToOne
+	private Screen screen;
+	@JsonIgnore
+	@ManyToOne
+	private Theatre theatre;
 	
 	@JsonDeserialize(using = LocalDateDeserializer.class)
 	@JsonSerialize(using = LocalDateSerializer.class)
@@ -53,6 +60,22 @@ public class Show {
 
 	public Show() {
 
+	}
+
+	public Screen getScreen() {
+		return screen;
+	}
+
+	public void setScreen(Screen screen) {
+		this.screen = screen;
+	}
+
+	public Theatre getTheatre() {
+		return theatre;
+	}
+
+	public void setTheatre(Theatre theatre) {
+		this.theatre = theatre;
 	}
 
 	public Show(Date showStartTime, Date showEndTime, String showName, Movies movie, LocalDate showDate) {
