@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -24,9 +25,12 @@ import com.example.angular_mtb.service.TheatreService;
 @RestController
 @RequestMapping("/theatre")
 public class TheatreController {
+	
+	
 	Logger logger=LoggerFactory.getLogger(TheatreController.class);
+	@Autowired
 	private TheatreService theatreservice;
-
+	
 
 	@GetMapping("/all")
 	public ResponseEntity<List<Theatre>> getAlltheatres() throws  TheatreNotFoundException {
@@ -42,6 +46,7 @@ public class TheatreController {
 	 * @throws AccessForbiddenException
 	 * @throws TheatreNotFoundException
 	 */
+	
 	@PostMapping("/insert")
 	public ResponseEntity<Theatre> addTheatre(@RequestBody Theatre t)
 			throws TheatreNotFoundException {

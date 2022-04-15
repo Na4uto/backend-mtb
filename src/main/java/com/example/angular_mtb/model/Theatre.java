@@ -7,7 +7,7 @@ import javax.persistence.*;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name="theatre")
+@Table(name = "theatre")
 public class Theatre {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -16,12 +16,11 @@ public class Theatre {
 	private String theatreCity;
 	private String managerName;
 	private String managerContact;
-	@OneToMany(mappedBy = "theatre",cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "theatre", cascade = CascadeType.ALL)
 	private List<Screen> screen;
 	@JsonIgnore
-	@OneToMany(mappedBy = "theatre",cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "theatre", cascade = CascadeType.ALL)
 	private List<Show> show;
-	
 
 	public Theatre() {
 
@@ -83,7 +82,7 @@ public class Theatre {
 	}
 
 	public void setScreen(List<Screen> screen) {
-		this.screen = screen;
+		this.screen =screen;
 	}
 
 	public List<Show> getShow() {

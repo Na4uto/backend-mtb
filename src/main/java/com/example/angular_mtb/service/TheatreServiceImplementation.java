@@ -2,6 +2,7 @@ package com.example.angular_mtb.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -69,16 +70,13 @@ public class TheatreServiceImplementation implements TheatreService {
 	public List<Theatre> findTheatresByMovie(Integer movieId) throws TheatreNotFoundException {
 		List<Theatre> theatreList=new ArrayList<>();
 		Movies movie=moviesrepository.findById(movieId).get();
-		Integer showwID=movie.getShow().getShowId();
-		List<Theatre> theatres = theatrerepository.findAll();
-		for(Theatre theatre:theatres) {
-			List<Show> shows =theatre.getShow();
-			for(Show show:shows){
-				if(show.getShowId()==showwID) {
-					theatreList.add(theatre);
-				}
-			}
+		Set<Show> shows=movie.getShows();
+	
+		for(Show s:shows) {
+			theatreList.add(s.getTheatre());
 		}
+		
+		
 		return theatreList;
 	}
 }
