@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.DynamicUpdate;
@@ -26,7 +27,14 @@ public class Movies {
 	private String movieLanguage;
 	private String movieDescription;
 	private String movieRating;
-	
+	@OneToOne
+	private Show show;
+	public Show getShow() {
+		return show;
+	}
+	public void setShow(Show show) {
+		this.show = show;
+	}
 	@OneToMany
 	private Set<Show> shows =new HashSet<>();
 	public int getMovieId() {
@@ -72,7 +80,7 @@ public class Movies {
 		this.movieRating = movieRating;
 	}
 	public Movies(int movieId, String movieName, String movieGenre, String movieHours, String movieLanguage,
-			String movieDescription, String movieRating) {
+			String movieDescription, String movieRating, Show show) {
 		super();
 		this.movieId = movieId;
 		this.movieName = movieName;
@@ -81,10 +89,12 @@ public class Movies {
 		this.movieLanguage = movieLanguage;
 		this.movieDescription = movieDescription;
 		this.movieRating = movieRating;
+		this.show = show;
 	}
 	public Movies() {
 		super();
 	}
+	
 	
 	
 }
