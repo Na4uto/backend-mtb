@@ -1,6 +1,6 @@
 package com.example.angular_mtb.exception;
 
-public class BookingNotFoundException {
+public class BookingNotFoundException extends Exception {
 
 	private static final long serialVersionUID = 1L;
 

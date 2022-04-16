@@ -1,10 +1,8 @@
 package com.example.angular_mtb.service;
 
 import java.util.List;
-<<<<<<< HEAD
-=======
 
->>>>>>> b5a1c8d4cc7186660cf08f13a102cc1a76aac005
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,10 +12,7 @@ import com.example.angular_mtb.model.Theatre;
 import com.example.angular_mtb.repo.ScreenRepository;
 import com.example.angular_mtb.repo.TheatreRepository;
 
-<<<<<<< HEAD
-=======
 
->>>>>>> b5a1c8d4cc7186660cf08f13a102cc1a76aac005
 @Service
 public class ScreenServiceImpl implements ScreenService {
 
@@ -55,13 +50,7 @@ public class ScreenServiceImpl implements ScreenService {
 	public Screen viewScreen(int screenId) throws ScreenNotFoundException {
 		return screenRepository.findById(screenId).get();
 		}
-<<<<<<< HEAD
-	
-=======
-	/**
-	 * @return updatedScreen
-	 */
->>>>>>> b5a1c8d4cc7186660cf08f13a102cc1a76aac005
+
 	@Override
 	public Screen updateScreen(Screen screen, Integer theatreId) {
 		Theatre theatre = new Theatre();
@@ -80,8 +69,5 @@ public class ScreenServiceImpl implements ScreenService {
 		return theatre;
 	}
 
-<<<<<<< HEAD
-=======
 
->>>>>>> b5a1c8d4cc7186660cf08f13a102cc1a76aac005
 }
