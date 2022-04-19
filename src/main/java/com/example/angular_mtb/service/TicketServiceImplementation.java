@@ -9,6 +9,7 @@ import com.example.angular_mtb.exception.TicketNotFoundException;
 import com.example.angular_mtb.model.Booking;
 import com.example.angular_mtb.model.Ticket;
 import com.example.angular_mtb.repo.BookingRepository;
+import com.example.angular_mtb.repo.SeatRepository;
 import com.example.angular_mtb.repo.TicketRepository;
 
 
@@ -20,7 +21,7 @@ import com.example.angular_mtb.repo.TicketRepository;
 public class TicketServiceImplementation implements TicketService {
 	private TicketRepository ticketRepository;
 
-	public TicketServiceImpl(TicketRepository ticketRepository) {
+	public TicketServiceImplementation(TicketRepository ticketRepository) {
 		this.ticketRepository = ticketRepository;
 	}
 	
