@@ -1,10 +1,19 @@
 package com.example.angular_mtb.service;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.example.angular_mtb.exception.BookingNotFoundException;
 import com.example.angular_mtb.model.Booking;
+//import com.example.angular_mtb.model.Customer;
+import com.example.angular_mtb.model.Seat;
+import com.example.angular_mtb.model.Show;
+import com.example.angular_mtb.model.Ticket;
 import com.example.angular_mtb.repo.BookingRepository;
 import com.example.angular_mtb.repo.MoviesRepository;
 import com.example.angular_mtb.repo.QueryClass;

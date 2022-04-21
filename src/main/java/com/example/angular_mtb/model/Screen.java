@@ -5,10 +5,8 @@ import java.util.List;
 import javax.persistence.*;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 2e50c80db94fd11ec953264e30d775dd9268a27e
+
 @Entity
 public class Screen {
 	@Id

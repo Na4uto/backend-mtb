@@ -1,8 +1,10 @@
 package com.example.angular_mtb.service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import com.example.angular_mtb.exception.BookingNotFoundException;
+import com.example.angular_mtb.model.Booking;
 
 public interface BookingService {
 	public Booking addBooking(Booking booking, Integer customerId,Integer showId) throws BookingNotFoundException;

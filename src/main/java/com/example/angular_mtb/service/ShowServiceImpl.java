@@ -9,10 +9,9 @@ import org.springframework.stereotype.Service;
 
 import com.example.angular_mtb.model.Screen;
 import com.example.angular_mtb.model.Show;
-<<<<<<< HEAD
+
 import com.example.angular_mtb.model.Theatre;
-=======
->>>>>>> 2e50c80db94fd11ec953264e30d775dd9268a27e
+
 import com.example.angular_mtb.repo.ScreenRepository;
 import com.example.angular_mtb.repo.ShowRepo;
 import com.example.angular_mtb.repo.TheatreRepository;
