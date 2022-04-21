@@ -2,6 +2,7 @@ package com.example.angular_mtb.service;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -49,9 +50,7 @@ public class ScreenServiceImpl implements ScreenService {
 	public Screen viewScreen(int screenId) throws ScreenNotFoundException {
 		return screenRepository.findById(screenId).get();
 		}
-	/**
-	 * @return updatedScreen
-	 */
+
 	@Override
 	public Screen updateScreen(Screen screen, Integer theatreId) {
 		Theatre theatre = new Theatre();
