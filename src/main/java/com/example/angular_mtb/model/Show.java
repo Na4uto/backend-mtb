@@ -46,11 +46,13 @@ public class Show {
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "movie_id", nullable = false)
 	private Movies movie;
-	@JsonIgnore
+
 	@ManyToOne
+	@JoinColumn(name = "screen_id", nullable = false)
 	private Screen screen;
-	@JsonIgnore
+
 	@ManyToOne
+	@JoinColumn(name = "theatre_id", nullable = false)
 	private Theatre theatre;
 	
 	@JsonDeserialize(using = LocalDateDeserializer.class)

@@ -1,0 +1,20 @@
+INDEX VERSION 1.131+/home/ubuntu/angular_ytRegisterpage/.metadata/.plugins/org.eclipse.jdt.core
+3945435409.index
+1865797976.index
+2968479362.index
+646308851.index
+3171730798.index
+3114297155.index
+1014791627.index
+3401495313.index
+217500965.index
+3493297997.index
+1091470311.index
+3257161366.index
+3396902502.index
+363741030.index
+2693695683.index
+553327109.index
+4074869547.index
+1682897617.index
+1714155180.index

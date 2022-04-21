@@ -11,7 +11,7 @@ import com.example.angular_mtb.model.Show;
 
 @Repository
 public interface ShowRepo extends JpaRepository<Show, Integer> {
-//	@Query("select s from Show s where s.theatre.theatreId = :id")
-//	List<Show> getAllByTheatreId(@Param("id") int id);
+	@Query("select s from Show s where s.theatre.theatreId = :id")
+	List<Show> getAllByTheatreId(@Param("id") int id);
 	public Show save(Show show);
 }
