@@ -76,7 +76,6 @@ public class TheatreServiceImplementation implements TheatreService {
 			theatreList.add(s.getTheatre());
 		}
 		
-		
 		return theatreList;
 	}
 }

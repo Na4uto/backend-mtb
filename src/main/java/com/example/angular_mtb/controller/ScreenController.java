@@ -22,7 +22,7 @@ import com.example.angular_mtb.exception.ScreenNotFoundException;
 import com.example.angular_mtb.model.Screen;
 import com.example.angular_mtb.service.ScreenService;
 
-@CrossOrigin(origins = "https://localhost:4200")
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/screens")
 public class ScreenController {

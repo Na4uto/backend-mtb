@@ -5,12 +5,8 @@ import java.util.List;
 import javax.persistence.*;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-/**
- * 
- * @author Thejesh
- * @category ScreenPojo
- *
- */
+
+
 @Entity
 public class Screen {
 	@Id
@@ -18,7 +14,9 @@ public class Screen {
 	private int screenId;
 	@JsonIgnore
 	@ManyToOne
+	@JoinColumn(name = "theatre_id", nullable = false)
 	private Theatre theatre;
+	@JsonIgnore
 	@OneToMany(mappedBy = "screen",cascade = CascadeType.ALL)
 	private List<Show> show;
 	private String screenName;
