@@ -27,11 +27,7 @@ import com.example.angular_mtb.exception.BookingNotFoundException;
 import com.example.angular_mtb.exception.ScreenNotFoundException;
 import com.example.angular_mtb.service.BookingService;
 
-/**
- * 
- * @author JyothiKinkar
- *
- */
+
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/booking")

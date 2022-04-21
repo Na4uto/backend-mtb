@@ -8,17 +8,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.angular_mtb.model.Show;
+import com.example.angular_mtb.repo.ScreenRepository;
 import com.example.angular_mtb.repo.ShowRepo;
+import com.example.angular_mtb.repo.TheatreRepository;
 
 @Service
 public class ShowServiceImpl implements ShowService{
 	
 	@Autowired
 	private ShowRepo showrepository;
-//	@Autowired
-//	private TheatreRepository theatreRepository;
-//	@Autowired
-//	private ScreenRepository screenRepository;
+	@Autowired
+	private TheatreRepository theatreRepository;
+	@Autowired
+	private ScreenRepository screenRepository;
 
 	@Override
 	public Show addShow(Show show)  {
